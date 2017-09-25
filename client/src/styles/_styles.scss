@@ -1,0 +1,31 @@
+/* SilverWare Portfolio Styles
+===================================================================================================================== */
+
+.portfolioproject {
+  
+  .slides {
+    
+    .slide-caption {
+      
+      left: 0;
+      right: 0;
+      bottom: 0;
+      
+      font-size: $portfolio-project-slide-caption-font-size;
+      
+      padding-left: $spacer-double;
+      padding-right: $spacer-double;
+      padding-bottom: $spacer-double;
+      
+      color: $portfolio-project-slide-caption-foreground;
+      background: $portfolio-project-slide-caption-background;
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: $portfolio-project-slide-caption-foreground;
+      }
+      
+    }
+    
+  }
+  
+}
