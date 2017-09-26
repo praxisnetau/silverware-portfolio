@@ -87,6 +87,16 @@ class PortfolioCategory extends Page implements ListSource
     ];
     
     /**
+     * Defines the default values for the fields of this object.
+     *
+     * @var array
+     * @config
+     */
+    private static $defaults = [
+        'HideFromMainMenu' => 1
+    ];
+    
+    /**
      * Defines the allowed children for this object.
      *
      * @var array|string

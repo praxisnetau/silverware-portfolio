@@ -213,13 +213,13 @@ class Portfolio extends Page implements ListSource
      */
     public function getProjects()
     {
-        return PortfolioProject::get()->filter('ParentID', $this->Children()->column('ID'));
+        return PortfolioProject::get()->filter('ParentID', $this->AllChildren()->column('ID') ?: null);
     }
     
     /**
      * Answers a list of projects within the receiver.
      *
-     * @return SS_List
+     * @return DataList
      */
     public function getListItems()
     {
