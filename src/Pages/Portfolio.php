@@ -145,6 +145,14 @@ class Portfolio extends Page implements ListSource
     ];
     
     /**
+     * Defines the list component class to use.
+     *
+     * @var string
+     * @config
+     */
+    private static $list_component_class = MasonryComponent::class;
+    
+    /**
      * Answers a list of field objects for the CMS interface.
      *
      * @return FieldList
@@ -261,16 +269,6 @@ class Portfolio extends Page implements ListSource
         }
         
         return $data;
-    }
-    
-    /**
-     * Answers the class to use for the list component.
-     *
-     * @return string
-     */
-    public function getListComponentClass()
-    {
-        return MasonryComponent::class;
     }
     
     /**
