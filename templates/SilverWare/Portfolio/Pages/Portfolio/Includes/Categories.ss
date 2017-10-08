@@ -11,4 +11,6 @@
       </article>
     <% end_loop %>
   </div>
+<% else %>
+  <% include Alert Type='warning', Text=$NoDataMessage %>
 <% end_if %>

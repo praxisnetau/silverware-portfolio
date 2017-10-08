@@ -68,7 +68,7 @@ class Portfolio extends Page implements ListSource
      * @var string
      * @config
      */
-    private static $icon = 'silverware-portfolio/admin/client/dist/images/icons/Portfolio.png';
+    private static $icon = 'silverware/portfolio: admin/client/dist/images/icons/Portfolio.png';
     
     /**
      * Defines the default child class for this object.
@@ -89,38 +89,34 @@ class Portfolio extends Page implements ListSource
     ];
     
     /**
-     * Defines the default values for the fields of this object.
+     * Defines the default values for the list view component.
      *
      * @var array
      * @config
      */
-    private static $defaults = [
-        'ListConfig' => [
-            'ShowImage' => 'all',
-            'ShowHeader' => 'all',
-            'ShowDetails' => 'none',
-            'ShowSummary' => 'none',
-            'ShowContent' => 'none',
-            'ShowFooter' => 'none',
-            'ImageLinksTo' => 'item',
-            'ImageItems' => 1,
-            'LinkTitles' => 1,
-            'LinkImages' => 1,
-            'TitleHidden' => 1,
-            'OverlayImages' => 1,
-            'Gutter' => 10,
-            'ColumnUnit' => 'percent',
-            'ImageLinksTo' => 'file',
-            'PercentWidth' => [
-                'Tiny' => '100',
-                'Small' => '50',
-                'Medium' => '33.33333333',
-                'Large' => '25',
-                'Huge' => '20'
-            ],
-            'HorizontalOrder' => 1,
-            'ImageItems' => 1
-        ]
+    private static $list_view_defaults = [
+        'ShowImage' => 'all',
+        'ShowHeader' => 'all',
+        'ShowDetails' => 'none',
+        'ShowSummary' => 'none',
+        'ShowContent' => 'none',
+        'ShowFooter' => 'none',
+        'ImageLinksTo' => 'item',
+        'ImageItems' => 1,
+        'LinkTitles' => 1,
+        'LinkImages' => 1,
+        'OverlayImages' => 1,
+        'Gutter' => 10,
+        'ColumnUnit' => 'percent',
+        'PercentWidth' => [
+            'Tiny' => '100',
+            'Small' => '50',
+            'Medium' => '33.33333333',
+            'Large' => '33.33333333',
+            'Huge' => '33.33333333'
+        ],
+        'HorizontalOrder' => 1,
+        'ImageItems' => 1
     ];
     
     /**
@@ -278,7 +274,7 @@ class Portfolio extends Page implements ListSource
      */
     public function getProjectList(PortfolioCategory $category)
     {
-        $list = $this->getListComponent();
+        $list = clone $this->getListComponent();
         
         $list->setSource($category->getProjects());
         $list->setStyleIDFrom($this, $category->Title);
@@ -294,5 +290,15 @@ class Portfolio extends Page implements ListSource
     public function getDetailsHeadingText()
     {
         return $this->DetailsHeading ? $this->DetailsHeading : _t(__CLASS__ . '.DETAILS', 'Details');
+    }
+    
+    /**
+     * Answers a message string to be shown when no data is available.
+     *
+     * @return string
+     */
+    public function getNoDataMessage()
+    {
+        return _t(__CLASS__ . '.NODATAAVAILABLE', 'No data available.');
     }
 }
