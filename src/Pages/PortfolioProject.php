@@ -70,7 +70,7 @@ class PortfolioProject extends Page
      * @var string
      * @config
      */
-    private static $icon = 'silverware-portfolio/admin/client/dist/images/icons/PortfolioProject.png';
+    private static $icon = 'silverware/portfolio: admin/client/dist/images/icons/PortfolioProject.png';
     
     /**
      * Determines whether this object can exist at the root level.
@@ -128,12 +128,12 @@ class PortfolioProject extends Page
     ];
     
     /**
-     * Defines the default detail fields to show for the object.
+     * Defines the detail fields to show for the object.
      *
      * @var array
      * @config
      */
-    private static $default_detail_fields = [
+    private static $detail_fields = [
         'client' => [
             'name' => 'Client',
             'icon' => 'user',
@@ -167,7 +167,7 @@ class PortfolioProject extends Page
      * @var string
      * @config
      */
-    private static $asset_folder = 'Portfolio';
+    private static $meta_image_folder = 'Portfolio';
     
     /**
      * Answers a list of field objects for the CMS interface.
@@ -257,6 +257,7 @@ class PortfolioProject extends Page
         
         // Define Field Labels:
         
+        $labels['Title'] = _t(__CLASS__ . '.PROJECTTITLE', 'Project title');
         $labels['Details'] = _t(__CLASS__ . '.DETAILS', 'Details');
         $labels['ShowLink'] = _t(__CLASS__ . '.SHOWLINK', 'Show link');
         $labels['Completed'] = _t(__CLASS__ . '.COMPLETED', 'Completed');
@@ -280,26 +281,6 @@ class PortfolioProject extends Page
         if ($this->Completed) {
             return $this->dbObject('Completed');
         }
-    }
-    
-    /**
-     * Answers the asset folder used by the receiver.
-     *
-     * @return string
-     */
-    public function getAssetFolder()
-    {
-        return $this->config()->asset_folder;
-    }
-    
-    /**
-     * Answers the name of the asset folder used for uploading images.
-     *
-     * @return string
-     */
-    public function getMetaImageFolder()
-    {
-        return $this->getAssetFolder();
     }
     
     /**

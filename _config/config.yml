@@ -6,6 +6,6 @@ Name: silverware-portfolio
 
 SilverWare\Portfolio\Pages\PortfolioProjectController:
   required_js:
-    - silverware-portfolio/client/dist/js/bundle.js
+    - "silverware/portfolio: client/dist/js/bundle.js"
   required_css:
-    - silverware-portfolio/client/dist/styles/bundle.css
+    - "silverware/portfolio: client/dist/styles/bundle.css"

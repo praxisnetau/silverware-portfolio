@@ -66,7 +66,7 @@ class PortfolioCategory extends Page implements ListSource
      * @var string
      * @config
      */
-    private static $icon = 'silverware-portfolio/admin/client/dist/images/icons/PortfolioCategory.png';
+    private static $icon = 'silverware/portfolio: admin/client/dist/images/icons/PortfolioCategory.png';
     
     /**
      * Determines whether this object can exist at the root level.
@@ -93,6 +93,7 @@ class PortfolioCategory extends Page implements ListSource
      * @config
      */
     private static $defaults = [
+        'ListInherit' => 1,
         'HideFromMainMenu' => 1
     ];
     
