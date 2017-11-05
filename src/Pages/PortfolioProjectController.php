@@ -30,4 +30,15 @@ use PageController;
  */
 class PortfolioProjectController extends PageController
 {
+    /**
+     * Answers an SSViewer instance with hash link rewriting disabled (for carousel controls).
+     *
+     * @param $action string
+     *
+     * @return SSViewer
+     */
+    public function getViewer($action)
+    {
+        return parent::getViewer($action)->dontRewriteHashlinks();
+    }
 }
