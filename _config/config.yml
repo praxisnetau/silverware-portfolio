@@ -2,9 +2,9 @@
 Name: silverware-portfolio
 ---
 
-# Configure Portfolio Project Controller:
+# Configure Content Controller:
 
-SilverWare\Portfolio\Pages\PortfolioProjectController:
+SilverStripe\CMS\Controllers\ContentController:
   required_js:
     - "silverware/portfolio: client/dist/js/bundle.js"
   required_css:
