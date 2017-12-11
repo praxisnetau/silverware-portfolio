@@ -73,6 +73,14 @@ class PortfolioProject extends Page
     private static $icon = 'silverware/portfolio: admin/client/dist/images/icons/PortfolioProject.png';
     
     /**
+     * Defines the table name to use for this object.
+     *
+     * @var string
+     * @config
+     */
+    private static $table_name = 'SilverWare_PortfolioProject';
+    
+    /**
      * Determines whether this object can exist at the root level.
      *
      * @var boolean
