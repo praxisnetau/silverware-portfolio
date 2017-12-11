@@ -69,6 +69,14 @@ class PortfolioCategory extends Page implements ListSource
     private static $icon = 'silverware/portfolio: admin/client/dist/images/icons/PortfolioCategory.png';
     
     /**
+     * Defines the table name to use for this object.
+     *
+     * @var string
+     * @config
+     */
+    private static $table_name = 'SilverWare_PortfolioCategory';
+    
+    /**
      * Determines whether this object can exist at the root level.
      *
      * @var boolean
